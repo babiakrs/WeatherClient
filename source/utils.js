@@ -1,0 +1,1 @@
+export const cn = (...cns) => cns.reduce((acc, curr) => `${acc} ${curr}`);

@@ -1,0 +1,47 @@
+.map-wrapper
+  width: 100vw
+  height: 100vh
+  padding: 10px
+  &.blur
+    animation: blurIn .2s linear forwards
+
+.country
+  display: block
+  margin: 0 auto
+  width: 100%
+  height: 100%
+
+.ukraine
+  fill: none
+  stroke: #000
+  stroke-width: 8
+  stroke-linecap: round
+  stroke-linejoin: round
+  stroke-miterlimit: 10
+  z-index: 1
+
+.city
+  fill: transparent
+  stroke: #000
+  stroke-width: 3
+  stroke-linecap: round
+  stroke-linejoin: round
+  stroke-miterlimit: 10
+  pointer-events: fill
+  cursor: pointer
+  transition: fill .2s
+  &:hover
+    fill: #de8076
+
+.city-name
+  user-select: none
+  font-size: 20px
+  pointer-events: none
+
+
+@keyframes blurIn
+  0%
+    filter: blur(0px)
+
+  100%
+    filter: blur(3px)
