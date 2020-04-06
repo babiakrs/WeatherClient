@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+	<symbol id='moon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'/></symbol>
+	<symbol id='sun' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='5'/><path d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42'/></symbol>	
+	<symbol id='spinner' viewBox='0 0 512 512'><path d='M43.75 221.15h69v69.8h-69zM399.25 221.05h69v69.8h-69zM81.27 381.434l48.79-48.79L179.416 382l-48.79 48.79zM332.577 130l48.79-48.79 49.356 49.356-48.79 48.79zM221.15 399.25h69.8v69h-69.8zM221.05 43.75h69.8v69h-69.8zM332.64 381.936l49.356-49.356 48.79 48.79-49.355 49.356zM81.207 130.63l49.356-49.356 48.79 48.79-49.356 49.356z'/></symbol>
+</svg>

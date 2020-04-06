@@ -11,6 +11,7 @@
 
 .modal-container
   width: 650px
+  margin: 10px
   background-color: #fff
   border-radius: 10px
   animation: .3s ease-in scaleIn forwards
@@ -32,6 +33,19 @@
   cursor: pointer
   opacity: .5
   user-select: none
+
+.loading-spinner
+	display: block
+	margin: 0 auto
+	fill: #444
+	animation: spinnerAnimation 2s infinite linear
+
+@keyframes spinnerAnimation
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
 
 @keyframes scaleIn
   0%
