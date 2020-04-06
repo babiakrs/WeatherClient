@@ -23,6 +23,7 @@ module.exports = {
 	entry: SOURCE_PATH + '/index.jsx',
 	output: {
 		path: BUILD_PATH,
+		publicPath: './',
 		filename: isProduction ? 'static/scripts/app.[hash:8].js' : 'static/scripts/app.js',
 		chunkFilename: isProduction ? 'static/scripts/[name].[chunkhash:8].js' : 'static/scripts/[name].chunk.js'
 	},
@@ -125,7 +126,7 @@ module.exports = {
 					{
 						loader: isProduction ? 'file-loader' : 'url-loader',
 						options: {
-							outputPath: '/static/images/',
+							outputPath: 'static/images/',
 							name: '[hash:8].[ext]'
 						}
 					}, {
