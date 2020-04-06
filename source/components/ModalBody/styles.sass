@@ -1,9 +1,12 @@
+// Forecast
 .tabs-wrapper
   display: flex
   justify-content: center
   list-style: none
   margin: 0
   padding: 0
+  color: #444
+  user-select: none
 
 .tab
   width: calc(100% / 7)
@@ -32,49 +35,67 @@
   text-align: center
   font-weight: 300
 
-.loading-spinner
-	display: block
-	margin: 0 auto
-	fill: #444
-	animation: spinnerAnimation 2s infinite linear
-
-
+// Body left
 .active-day-wrapper
   display: flex
+  animation: .3s ease-in fadeIn forwards
 
 .active-day-box-left
   flex: 0 1 200px
+  padding: 50px 0
+  position: relative
+  color: #444
+  font-weight: 300
+  &:after
+    content: ' '
+    width: 1px
+    height: 100px
+    border-left: 1px solid rgba(0, 0, 0, .15)
+    position: absolute
+    right: 0
+    top: calc(50% - 50px)
 
 .active-day-box-right
   flex: 1 1 100px
+  display: flex
+  align-items: center
+  color: #444
 
 .active-day-max-temp
-  height: 100px
-  font-size: 2em
+  font-size: 1.7em
   text-align: center
-  line-height: 100px
+  line-height: 50px
   position: relative
-  &:after
-    content: 'Max.'
-    font-size: 12px
-    position: absolute
-    bottom: -20px
-    left: 50%
-    color: grey
 
 .active-day-min-temp
   @extend .active-day-max-temp
-  &:after
-    content: 'Min.'
+  font-size: 1.5em
+
+.active-day-icon
+  position: absolute
+  left: 25px
+  top: 12.5px
 
 
-@keyframes spinnerAnimation
-  0%
-    transform: rotate(0deg)
+// Body right
+.active-day-forecast-list
+  width: 100%
+  padding: 0
+  margin: 0 50px
+  list-style: none
+  font-weight: 300
 
-  100%
-    transform: rotate(360deg)
+.active-day-forecast-item
+  margin: 6px 0
+  border-bottom: 1px dotted rgba(0, 0, 0, .15)
 
+.active-day-forecast-label
+  color: 2
+
+.active-day-forecast-value
+  float: right
+
+// Animations
 @keyframes scaleIn
   0%
     transform: scale(0.05)
@@ -84,3 +105,10 @@
 
   100%
     transform: scale(1)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
