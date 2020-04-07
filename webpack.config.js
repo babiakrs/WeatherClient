@@ -150,7 +150,7 @@ module.exports = {
 			Components: path.resolve(SOURCE_PATH, 'components'),
 			Actions: path.resolve(SOURCE_PATH, 'actions'),
 			Reducers: path.resolve(SOURCE_PATH, 'reducers'),
-			Styles: path.resolve(SOURCE_PATH, 'sass'),
+			Styles: path.resolve(SOURCE_PATH, 'styles'),
 			Services: path.resolve(SOURCE_PATH, 'services'),
 			Utils: path.resolve(SOURCE_PATH, 'utils.js'),
 			Images: path.resolve(SOURCE_PATH, 'img')

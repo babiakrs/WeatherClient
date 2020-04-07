@@ -13,7 +13,7 @@
 
 .ukraine
   fill: none
-  stroke: #000
+  stroke: var(--text-color)
   stroke-width: 8
   stroke-linecap: round
   stroke-linejoin: round
@@ -22,7 +22,7 @@
 
 .city
   fill: transparent
-  stroke: #000
+  stroke: var(--text-color)
   stroke-width: 3
   stroke-linecap: round
   stroke-linejoin: round
@@ -31,12 +31,13 @@
   cursor: pointer
   transition: fill .2s
   &:hover
-    fill: #de8076
+    fill: #a9f5ed
 
 .city-name
   user-select: none
   font-size: 20px
   pointer-events: none
+  fill: var(--text-color)
 
 
 @keyframes blurIn
