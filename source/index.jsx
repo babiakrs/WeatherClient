@@ -7,7 +7,6 @@ import WeatherReducer from 'Reducers/weather.js';
 import initialState from 'Reducers/initialState.js';
 
 import App from 'Components/App';
-import 'Styles/main.sass';
 
 const store = createStore(
 	WeatherReducer,

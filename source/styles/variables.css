@@ -1,0 +1,11 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #444;
+  --shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23)
+}
+
+:root body[class~=dark] {
+  --bg-color: #0f0e1d;
+  --text-color: #969696;
+  --shadow: 0 3px 6px rgba(255, 255, 255, .16), 0 3px 6px rgba(255, 255, 255, .23)
+}

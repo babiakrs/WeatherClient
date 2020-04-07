@@ -23,7 +23,7 @@ module.exports = {
 	entry: SOURCE_PATH + '/index.jsx',
 	output: {
 		path: BUILD_PATH,
-		publicPath: './',
+		publicPath: isProduction ? './' : '',
 		filename: isProduction ? 'static/scripts/app.[hash:8].js' : 'static/scripts/app.js',
 		chunkFilename: isProduction ? 'static/scripts/[name].[chunkhash:8].js' : 'static/scripts/[name].chunk.js'
 	},
@@ -150,7 +150,7 @@ module.exports = {
 			Components: path.resolve(SOURCE_PATH, 'components'),
 			Actions: path.resolve(SOURCE_PATH, 'actions'),
 			Reducers: path.resolve(SOURCE_PATH, 'reducers'),
-			Styles: path.resolve(SOURCE_PATH, 'sass'),
+			Styles: path.resolve(SOURCE_PATH, 'styles'),
 			Services: path.resolve(SOURCE_PATH, 'services'),
 			Utils: path.resolve(SOURCE_PATH, 'utils.js'),
 			Images: path.resolve(SOURCE_PATH, 'img')
