@@ -23,7 +23,6 @@ export default function App() {
     replaceClass(document.body, activeTheme, newTheme);
     setActiveTheme(newTheme);
     setCookie('theme', newTheme, { expires: (new Date(Date.now() + 84600e3 * 30)).toUTCString() });
-    console.log('123');
   };
 
   const toggleModal = () => {
