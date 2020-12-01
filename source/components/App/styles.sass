@@ -1,6 +1,5 @@
 *
   box-sizing: border-box
-  transition: all .3s
   
 html,
 body
@@ -9,4 +8,31 @@ body
   font-size: 16px
   font-weight: 400
   background-color: var(--bg-color)
+  transition: background-color .3s
   overflow: hidden
+
+
+
+.corner-ribbon__wrapper
+  position: fixed
+  top: 30px
+  left: -50px
+  width: 200px
+  height: 40px
+  background-color: tomato
+  text-align: center
+  transform: rotateZ(-45deg)
+
+.corner-ribbon__link
+  font-size: 1.5em
+  text-decoration: none
+  color: #fff
+  font-weight: 500
+  font-variant: all-small-caps
+
+.corner-ribbon__icon
+  width: 1em
+  height: 1em
+  position: relative
+  top: 7px
+  margin-right: 5px

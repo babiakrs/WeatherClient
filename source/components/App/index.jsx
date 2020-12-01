@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Map from 'Components/Map';
 import Modal from 'Components/Modal';
+import Icon from 'Components/Icon';
 import ThemeSwitcher from 'Components/ThemeSwitcher';
 import { getCookie, setCookie, addClass, replaceClass } from 'Utils';
 import 'Styles/variables.css';
@@ -31,6 +32,12 @@ export default function App() {
 
   return (
     <React.Fragment>
+      <div className='corner-ribbon__wrapper'>
+        <a href='https://github.com/Almost-Infinity/WeatherClient' target='_blank' rel='noopener noreferrer' className='corner-ribbon__link'>
+          <Icon type='github' className='corner-ribbon__icon'/>
+          source
+        </a>
+      </div>
       <Map toggleModal={toggleModal} modalState={modalState} setActiveCity={setActiveCity}/>
       {modalState && <Modal toggleModal={toggleModal} activeCity={activeCity.activeCity} style={{zIndex: 100}}/>}
       <ThemeSwitcher activeTheme={activeTheme} toggleTheme={toggleTheme} style={{zIndex: 10}}/>
