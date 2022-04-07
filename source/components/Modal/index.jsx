@@ -6,10 +6,10 @@ import Icon from 'Components/Icon';
 import ModalBody from 'Components/ModalBody';
 import styles from './styles.sass';
 
-function Modal({ toggleModal, activeCity, cities, style }) {
+function Modal({ toggleModal, activeCity, cities, style, innerRef }) {
   return (
     <div className={styles.modalBg}>
-      <div className={styles.modalContainer} style={style}>
+      <div ref={innerRef} className={styles.modalContainer} style={style}>
         <div className={styles.modalHeader}>
           <div className={styles.modalTitle}>
             {cities[activeCity].isFetched && cities[activeCity].weather.location.name}
@@ -30,7 +30,8 @@ Modal.propTypes = {
   toggleModal: func.isRequired,
   activeCity: number.isRequired,
   cities: array.isRequired,
-  style: object
+  style: object,
+  innerRef: object.isRequired
 };
 
 const mapStateToProps = (state) => ({ cities: state.cities });

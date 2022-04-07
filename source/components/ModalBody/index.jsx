@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { array } from 'prop-types';
 
 import { cn } from 'Utils';
 import Icon from 'Components/Icon';
 import styles from './styles.sass';
-
-const monthsNames = [ 'Январь', 'Февраль', 'Марь', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ];
+import { i18n } from '../../i18n/definition';
+import { LangContext } from 'Contexts/lang.context';
 
 function ModalBody({ forecastday }) {
+  const activeLang = useContext(LangContext);
+  const activeI18n = i18n[activeLang];
+
   const [ activeDay, setActiveDay ] = useState(0);
 
   return (
@@ -17,9 +20,9 @@ function ModalBody({ forecastday }) {
         forecastday.map((item, idx) => {
           const date = new Date(item.date_epoch * 1000);
           return (
-            <li key={idx} className={idx === activeDay ? cn(styles.tab, styles.active) : styles.tab} onClick={() => setActiveDay(idx)}>
+            <li key={date.getDate()} className={idx === activeDay ? cn(styles.tab, styles.active) : styles.tab} onClick={() => setActiveDay(idx)}>
               <img className={styles.tabIcon} alt={item.day.condition.text} src={item.day.condition.icon} title={item.day.condition.text}/>
-              <div className={styles.tabTitle}>{`${monthsNames[date.getMonth()]}, ${date.getDate()}`}</div>
+              <div className={styles.tabTitle}>{`${activeI18n.month[date.getMonth()]}, ${date.getDate()}`}</div>
             </li>
           );
         })
@@ -39,23 +42,23 @@ function ModalBody({ forecastday }) {
         <div className={styles.activeDayBoxRight}>
           <ul className={styles.activeDayForecastList}>
             <li className={styles.activeDayForecastItem}>
-              <span className={styles.activeDayForecastLabel}>Скорость ветра:</span>
-              <span className={styles.activeDayForecastValue}>{`${forecastday[activeDay].day.maxwind_kph} км/ч`}</span>
+              <span className={styles.activeDayForecastLabel}>{activeI18n.maxwind}:</span>
+              <span className={styles.activeDayForecastValue}>{forecastday[activeDay].day.maxwind_kph} {activeI18n.kmh}</span>
             </li>
             <li className={styles.activeDayForecastItem}>
-              <span className={styles.activeDayForecastLabel}>Осадки:</span>
-              <span className={styles.activeDayForecastValue}>{`${forecastday[activeDay].day.totalprecip_mm} мм`}</span>
+              <span className={styles.activeDayForecastLabel}>{activeI18n.precip}:</span>
+              <span className={styles.activeDayForecastValue}>{forecastday[activeDay].day.totalprecip_mm} {activeI18n.mm}</span>
             </li>
             <li className={styles.activeDayForecastItem}>
-              <span className={styles.activeDayForecastLabel}>Влажность:</span>
+              <span className={styles.activeDayForecastLabel}>{activeI18n.humidity}:</span>
               <span className={styles.activeDayForecastValue}>{`${forecastday[activeDay].day.avghumidity} %`}</span>
             </li>
             <li className={styles.activeDayForecastItem}>
-              <span className={styles.activeDayForecastLabel}>Рассвет:</span>
+              <span className={styles.activeDayForecastLabel}>{activeI18n.sunrise}:</span>
               <span className={styles.activeDayForecastValue}>{forecastday[activeDay].astro.sunrise}</span>
             </li>
             <li className={styles.activeDayForecastItem}>
-              <span className={styles.activeDayForecastLabel}>Закат:</span>
+              <span className={styles.activeDayForecastLabel}>{activeI18n.sunset}:</span>
               <span className={styles.activeDayForecastValue}>{forecastday[activeDay].astro.sunset}</span>
             </li>
           </ul>

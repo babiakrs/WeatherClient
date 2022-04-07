@@ -22,11 +22,11 @@ const receiveForecastFailed = (cityId, err) => ({
   err
 });
 
-export const fetchForecast = (coords, cityId) => {
+export const fetchForecast = (coords, cityId, lang = 'uk') => {
   return (dispatch) => {
     dispatch(requestForecast(cityId));
 
-    const weatherService = new WeatherService;
+    const weatherService = new WeatherService(lang);
     weatherService.getForecast(coords).then((res) => {
       if (res.error) {
         dispatch(receiveForecastFailed(cityId, res.error));
