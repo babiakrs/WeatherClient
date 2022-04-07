@@ -71,8 +71,3 @@ $RECYCLE.BIN
 
 # Workspace files are user-specific
 .vscode
-
-# Firebase files
-.firebase/
-.firebaserc
-firebase.json
